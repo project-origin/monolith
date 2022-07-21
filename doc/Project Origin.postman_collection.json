@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "a52f2a9a-d41b-4bcf-bfec-2d5c9f3b0ee6",
+		"name": "Project Origin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/measurements",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWJqZWN0Ijoic3ViamVjdDEifQ.9mQwQBZyeGOHil0PSX3Z6puHkghVOu_Aa-qmQ5IyoNo",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8081/measurements",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8081",
+					"path": [
+						"measurements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/measurements/summary",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWJqZWN0Ijoic3ViamVjdDEifQ.9mQwQBZyeGOHil0PSX3Z6puHkghVOu_Aa-qmQ5IyoNo"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"grouping\": [\"gsrn\"],\n    \"resolution\": \"month\",\n    \"fill\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8081/measurements/summary",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8081",
+					"path": [
+						"measurements",
+						"summary"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/meteringpoints",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWJqZWN0Ijoic3ViamVjdDEifQ.9mQwQBZyeGOHil0PSX3Z6puHkghVOu_Aa-qmQ5IyoNo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8081/meteringpoints",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8081",
+					"path": [
+						"meteringpoints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/meteringpoints/details",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWJqZWN0Ijoic3ViamVjdDEifQ.9mQwQBZyeGOHil0PSX3Z6puHkghVOu_Aa-qmQ5IyoNo"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"gsrn\": \"123456789012345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8081/meteringpoints/details",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8081",
+					"path": [
+						"meteringpoints",
+						"details"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/technologies",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWJqZWN0Ijoic3ViamVjdDEifQ.9mQwQBZyeGOHil0PSX3Z6puHkghVOu_Aa-qmQ5IyoNo"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8081/technologies",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8081",
+					"path": [
+						"technologies"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
