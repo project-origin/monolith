@@ -1,0 +1,46 @@
+trigger:
+  - master
+  - preprod
+  - test
+  - demo
+  - develop
+
+pr: none
+
+resources:
+  repositories:
+    - repository: self
+    - repository: templates
+      type: github
+      endpoint: project-origin
+      name: project-origin/pipeline-templates
+
+variables:
+  - name: releaseName
+    value: 'datahub-service'
+  - name: imageName
+    value: 'projectorigin/$(releaseName)'
+  - template: vars.yml@templates
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+jobs:
+  - template: job-build-test-push.yml@templates
+    parameters:
+      imageName: $(imageName)
+      tag: $(tag)
+
+  - template: job-deploy.yml@templates
+    parameters:
+      dependsOn: build_test_push
+      kubeCon: $(kubeCon)
+      namespace: $(namespace)
+      releaseName: $(releaseName)
+      deploymentEnvironment: $(deploymentEnvironment)
+      overrideValues: tag=$(tag)
+      pool:
+        ${{ if or(eq(variables['Build.SourceBranchName'], 'master'), eq(variables['Build.SourceBranchName'], 'demo')) }}:
+          name: $(poolName)
+        ${{ if ne(variables['Build.SourceBranchName'], 'master') }}:
+          vmImage: 'ubuntu-latest'

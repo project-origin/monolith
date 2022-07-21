@@ -1,0 +1,43 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pytest = "*"
+waitress = "*"
+testcontainers = "*"
+alembic = "*"
+
+[packages]
+gunicorn = "*"
+gevent = "*"
+flask = "*"
+flask-cors = "*"
+Werkzeug = "*"
+python-decouple = "*"
+SQLAlchemy = "*"
+psycopg2 = "*"
+marshmallow = "*"
+marshmallow_dataclass = "*"
+marshmallow_enum = "*"
+typeguard = "*"
+requests = "*"
+wrapt = "*"
+pytz = "*"
+sendgrid = "*"
+python-dateutil = "*"
+pyjwt = "*"
+click = "*"
+click-spinner = "*"
+cloup = "*"
+authlib = "*"
+
+[requires]
+python_version = "3.8"
+
+[scripts]
+migrate = "alembic upgrade head"
+revision = "alembic revision --autogenerate"
+develop = "python -m waitress --port=8089 datahub:app"
+task = "python trigger-pipeline.py"
